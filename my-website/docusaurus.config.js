@@ -41,6 +41,20 @@ const config = {
     ],
   ],
 
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es', 'ru', 'pt'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      fa: {
+        direction: 'rtl',
+      },
+    },
+  },
+
   themeConfig:
     /** @type {import('docusaurus-preset-openapi').ThemeConfig} */
     ({
@@ -55,7 +69,7 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial",
+            label: "Documentation",
           },
           { to: "/api", label: "API", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
@@ -63,6 +77,10 @@ const config = {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
             position: "right",
+          },
+          {
+            type: 'localeDropdown',
+            position: 'left',
           },
         ],
       },
@@ -73,7 +91,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Documentation",
                 to: "/docs/intro",
               },
             ],
